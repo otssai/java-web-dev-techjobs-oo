@@ -1,7 +1,5 @@
 package org.launchcode.techjobs_oo;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 public class Job {
@@ -53,18 +51,18 @@ public class Job {
     public String toString() {
         String str = "\nID: " + this.getId() + "\n";
 
-        if (this.getName() == "") {
+        if (this.getName().equals("")) {
             str += "Name: Data not available\n";
         } else {
             str += "Name: " + this.getName() + "\n";
         }
 
-        str += this.getEmployer().toString() + "\n";
-        str += this.getLocation().toString() + "\n";
-        str += this.getPositionType().toString() + "\n";
-        str += this.getCoreCompetency().toString() + "\n";
+        str += "Employer: " + this.getEmployer().toString() + "\n";
+        str += "Location: " + this.getLocation().toString() + "\n";
+        str += "Position Type: " + this.getPositionType().toString() + "\n";
+        str += "Core Competency: " + this.getCoreCompetency().toString() + "\n";
 
-        if (this.getName() == "" && this.getEmployer().getValue() == "" && this.getLocation().getValue() == "" && this.getPositionType().getValue() == "" && this.getCoreCompetency().getValue() == "") {
+        if (this.getName().equals("") && this.getEmployer().getValue().equals("") && this.getLocation().getValue().equals("") && this.getPositionType().getValue().equals("") && this.getCoreCompetency().getValue().equals("")) {
             return "OOPS! This job does not seem to exist.";
         } else {
             return str;

@@ -33,6 +33,17 @@ public abstract class JobField {
             return Objects.hash(getId());
         }
 
+        // rewrite toString method
+
+        @Override
+        public String toString() {
+            if (this.getValue().equals("")) {
+                return "Data not available";
+            } else {
+                return this.getValue();
+            }
+        }
+
         // Getters and Setters:
 
         public int getId() {
